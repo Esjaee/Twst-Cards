@@ -281,8 +281,30 @@ body {
   border-image-slice: 1;
 }
 
+.modal-actions {
+  margin-top: 30px;
+  text-align: right;
+}
 
-/* MODAL STUFF*/
+.save-card-button {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #282828 50%, #0f0f0f 50%);
+  color: #f0efeb;
+  border: 2px solid #b4a073;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.save-card-button:hover {
+  color: #b4b4b4;
+  background-color: #1a1a1a;
+}
+
+
+/* CARD DETAILSSS*/
 .modal-fields-row {
   display: flex;
   gap: 16px;
@@ -302,8 +324,25 @@ body {
   background-size: contain;     /* shows the full image without cropping */
   background-repeat: no-repeat; /* prevents tiling */
   background-position: center;  /* keeps image centered */
+  position: relative;
 }
+
+.preview-element-icons {
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  display: flex;
+  gap: 0px;
 }
+
+.preview-element-icons .element-icon {
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 
 .addcard-modal-fields label {
   display: block;
@@ -351,63 +390,220 @@ body {
 /*============================== SPELL BLOCK =========================================*/
 .spell-block {
   margin-top: 16px;
-  text-align: center;
 }
 
-.spell-block-header {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #7a6849;
+.spell-block-label {
+  display: block;
+  margin-bottom: 2px;
+  color: #333;
+  font-size: 0.75rem; 
 }
 
-.spell-slot-container {
+.spell-slots {
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
 }
 
 .spell-slot {
+  position: relative;
   width: 40px;
   height: 40px;
-  background: #ddd;
-  border: 2px solid #b4a073;
+  border: 1px solid #b4a073;
   border-radius: 6px;
-  position: relative;
-  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.spell-element-select {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
-.selected-element {
-  font-size: 0.8rem;
-  color: #444;
-}
-
-.element-dropdown {
+.spell-element-select .element-icon {
   position: absolute;
-  top: 100%;
-  left: 0;
-  transform: translateY(4px);
-  display: none;
-  width: 100px;
-  font-size: 0.85rem;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.spell-slot.open .element-dropdown {
-  display: block;
-}
-
-.add-spell-button {
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  color: #7a6849;
-  border: 2px dashed #b4a073;
+.spell-element-select select {
+  appearance: none;
   background: transparent;
-  border-radius: 6px;
+  border: none;
+  text-align: center;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
+
+.add-spell-btn {
+  background: transparent;
+  border: 2px dashed #b4a073;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b4a073;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-spell-btn:hover {
+  background: rgba(180, 160, 115, 0.1);
+}
+
+.spell-slot {
+  position: relative;
+}
+
+.spell-slot {
+  position: relative;
+}
+
+.spell-slot-delete {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 16px;
+  height: 16px;
+  background-color: #b4a073;
+  color: white;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.spell-slot:nth-child(n+2):hover .spell-slot-delete {
+  display: flex;
+}
 /*============================END OF SPELL BLOCK =====================================*/
+
+/*============================== RARITY BLOCK =========================================*/
+.rarity-block {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rarity-label {
+  display: block;
+  margin-bottom: 2px;
+  color: #333;
+  font-size: 0.75rem; 
+}
+
+.rarity-options {
+  display: flex;
+  gap: 10px;
+}
+
+.rarity-option {
+  padding: 6px 6px;
+  border: 2px solid #b4a073;
+  border-radius: 6px;
+  background: transparent;
+  color: #282828;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rarity-option:hover {
+  background-color: rgba(180, 160, 115, 0.1);
+}
+
+.rarity-option.active {
+  background-color: rgba(180, 160, 115, 0.25);
+  border-color: #b4a073;
+  color: #000;
+}
+/*=========================== END OF RARITY BLOCK =====================================*/
+
+/*============================== COLLECTION BLOCK =====================================*/
+.collection-block {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.collection-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #7a6849;
+  margin-bottom: 6px;
+}
+
+#collectionInput {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #b4a073;
+  border-radius: 6px;
+  outline: none;
+  background-color: #fdfdfb;
+  color: #333;
+}
+/*=========================== END OF COLLECTION BLOCK =================================*/
+
+/*============================== STATS BLOCK =========================================*/
+.stats-block {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #7a6849;
+  margin-bottom: 6px;
+}
+
+.stats-fields {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.stat-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-field label {
+  font-size: 0.75rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.stat-field input {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #b4a073;
+  border-radius: 6px;
+  outline: none;
+  background-color: #fdfdfb;
+  color: #333;
+}
+/*=========================== END OF STATS BLOCK =====================================*/
+
+
+
