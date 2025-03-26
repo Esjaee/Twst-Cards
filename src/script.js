@@ -1,6 +1,6 @@
 const GIST_ID = "2bb78e5a29533659edb139aef9c27586";
 const GIST_FILENAME = "images.json";
-const GITHUB_TOKEN = "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";
+const GITHUB_TOKEN = "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";
 
 
 let images = [];
@@ -22,7 +22,8 @@ function createImageElement(imageObj) {
   const elementIconUrls = {
     'Flora': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/plant.svg',
     'Water': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/water.svg',
-    'Fire': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/fire.svg'
+    'Fire': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/fire.svg',
+    'Cosmic': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/cosmic.svg'
   };
 
   // Create element icons container
@@ -110,37 +111,250 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+/*============================== SAVE CARD =========================================*/
+
+function getCardDataFromModal() {
+  const name = document.getElementById('characterNameInput').value.trim();
+  const src = document.getElementById('imageUrlInput').value.trim();
+
+  // Get elements
+  const elementSelects = document.querySelectorAll('.spell-slot select');
+  const elements = Array.from(elementSelects)
+    .map(select => select.value.trim())
+    .filter(val => val !== "");
+
+  // Get rarity
+  const rarityBtn = document.querySelector('.rarity-option.active');
+  const rarity = rarityBtn ? rarityBtn.getAttribute('data-rarity') : null;
+
+  // Get collection
+  const collection = document.getElementById('collectionInput').value.trim();
+
+  // Get stats
+  const hp = parseInt(document.getElementById('statHP').value.trim(), 10) || 0;
+  const atk = parseInt(document.getElementById('statATK').value.trim(), 10) || 0;
+
+  return {
+    name,
+    src,
+    elements,
+    rarity,
+    collection,
+    hp,
+    atk
+  };
+}
+
+async function saveToGist() {
+  const updatedContent = JSON.stringify({ images }, null, 2);
+
+  try {
+    const res = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${GITHUB_TOKEN}`
+      },
+      body: JSON.stringify({
+        files: {
+          [GIST_FILENAME]: {
+            content: updatedContent
+          }
+        }
+      })
+    });
+
+    if (!res.ok) throw new Error("Failed to update Gist");
+
+    console.log("✅ Gist updated successfully");
+  } catch (err) {
+    console.error("❌ Error updating Gist:", err);
+    alert("Failed to save to Gist. Check your network or GitHub token.");
+  }
+}
+
+/*============================== SAVE CARD =========================================*/
+
 
 /*** ADD CARD MODAL STUFDDFRE*/
 function previewImage() {
   const url = document.getElementById('imageUrlInput').value.trim();
   const preview = document.getElementById('imagePreview');
   preview.style.backgroundImage = url ? `url("${url}")` : '';
-  
+}
   
 /*============================== SPELL BLOCK =========================================*/
-function toggleElementDropdown(slot) {
-  slot.classList.toggle("open");
-}
+function setupSpellSlots() {
+  const spellSlots = document.querySelector('.spell-slots');
+  const addSpellBtn = spellSlots.querySelector('.add-spell-btn');
+  const previewImage = document.getElementById('imagePreview');
+  
+  let previewElementIcons = previewImage.querySelector('.preview-element-icons');
+  if (!previewElementIcons) {
+    previewElementIcons = document.createElement('div');
+    previewElementIcons.className = 'preview-element-icons';
+    previewImage.appendChild(previewElementIcons);
+  }
+  
+  addSpellBtn.addEventListener('click', () => {
+    const slots = spellSlots.querySelectorAll('.spell-slot');
+    if (slots.length < 3) {
+      const newSlot = slots[0].cloneNode(true);
+      newSlot.querySelector('select').selectedIndex = 0;
+      
+      // Add delete button for the new slot
+      const deleteBtn = document.createElement('div');
+      deleteBtn.className = 'spell-slot-delete';
+      deleteBtn.innerHTML = '✕';
+      newSlot.appendChild(deleteBtn);
+      
+      spellSlots.insertBefore(newSlot, addSpellBtn);
+      
+      if (spellSlots.querySelectorAll('.spell-slot').length >= 3) {
+        addSpellBtn.style.display = 'none';
+      }
+    }
+  });
 
-function updateSpellDisplay(select) {
-  const slot = select.parentElement;
-  const selected = select.value;
-  slot.querySelector(".selected-element").textContent = selected[0]; // First letter as icon
-  slot.classList.remove("open");
-}
+  // Delegate event for delete buttons
+  spellSlots.addEventListener('click', (e) => {
+    if (e.target.classList.contains('spell-slot-delete')) {
+      const slot = e.target.closest('.spell-slot');
+      const element = slot.querySelector('select').value;
+      
+      // Remove corresponding element icon from preview
+      const iconToRemove = previewImage.querySelector(`.icon-${element}`);
+      if (iconToRemove) iconToRemove.remove();
+      
+      // Remove the slot
+      slot.remove();
+      
+      // Show add button if now less than 3 slots
+      addSpellBtn.style.display = 'block';
+    }
+  });
 
-function addSpellSlot() {
-  const container = document.getElementById("spellSlotContainer");
-  const existingSlots = container.querySelectorAll(".spell-slot");
-  if (existingSlots.length >= 3) return;
+spellSlots.addEventListener('change', (e) => {
+  if (e.target.tagName === 'SELECT') {
+    const slot = e.target.closest('.spell-slot');
+    const selectedElement = e.target.value;
 
-  const newSlot = existingSlots[0].cloneNode(true);
-  newSlot.querySelector(".selected-element").textContent = "?";
-  newSlot.querySelector(".element-dropdown").selectedIndex = 0;
-  newSlot.classList.remove("open");
-  container.insertBefore(newSlot, container.querySelector(".add-spell-button"));
+    const iconUrls = {
+      'Flora': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/plant.svg',
+      'Water': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/water.svg',
+      'Fire': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/fire.svg',
+      'Cosmic': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/cosmic.svg'
+    };
+
+    const previewElementIcons = document.querySelector('.preview-element-icons');
+
+    // First: remove ALL icons of the current spell slot
+    // then add the updated one
+    const allSlotIcons = Array.from(previewElementIcons.querySelectorAll(`.element-icon`));
+    const slotIndex = Array.from(spellSlots.querySelectorAll('.spell-slot')).indexOf(slot);
+
+    // Remove any existing icon added by this slot (identified by a slot index class)
+    allSlotIcons.forEach(icon => {
+      if (icon.dataset.slotIndex === String(slotIndex)) {
+        icon.remove();
+      }
+    });
+
+    // Add the updated icon
+    if (selectedElement && iconUrls[selectedElement]) {
+      const iconElement = document.createElement('div');
+      iconElement.className = `element-icon icon-${selectedElement}`;
+      iconElement.dataset.slotIndex = slotIndex; // track which slot added this icon
+      iconElement.style.backgroundImage = `url(${iconUrls[selectedElement]})`;
+      previewElementIcons.appendChild(iconElement);
+    }
+  }
+});
+
 }
 
 /*============================== END OF SPELL BLOCK ==================================*/
+
+/*================================= RARITY BLOCK =====================================*/
+function setupRaritySelection() {
+  const rarityButtons = document.querySelectorAll('.rarity-option');
+
+  rarityButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      rarityButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const selectedRarity = btn.getAttribute('data-rarity');
+      console.log('Selected rarity:', selectedRarity); // or store for form submission
+    });
+  });
 }
+
+/*============================== END OF RARITY BLOCK ==================================*/
+
+/*============================== COLLECTION BLOCK =====================================*/
+
+/*=========================== END OF COLLECTION BLOCK =================================*/
+
+/*============================== STATS BLOCK =========================================*/
+
+/*=========================== END OF STATS BLOCK =====================================*/
+
+
+
+/*============================== DOM CONTENT LOAD =========================================*/
+document.addEventListener('DOMContentLoaded', () => {
+  fetchFromGist();
+  setupSpellSlots();
+  setupRaritySelection();
+
+  const saveButton = document.querySelector('.save-card-button');
+
+  saveButton.addEventListener('click', () => {
+    const cardData = getCardDataFromModal();
+    console.log("Collected Card Data:", cardData);
+
+    if (!cardData.name || !cardData.src || cardData.elements.length < 2 || !cardData.rarity) {
+      alert("Please complete all required fields: name, image, at least 2 spells, and rarity.");
+      return;
+    }
+
+    const newCard = {
+      src: cardData.src,
+      category: cardData.collection || "Uncategorized",
+      elements: cardData.elements
+    };
+
+    images.push(newCard);
+    saveToGist();
+
+    const grid = document.querySelector('.grid-space');
+    const newCardElement = createImageElement(newCard);
+    grid.appendChild(newCardElement);
+
+    // Close modal
+    document.querySelector('.add-card-modal-overlay').style.display = 'none';
+
+    // Optional: Reset modal form
+    resetModalForm();
+  });
+});
+/*========================*/
+function resetModalForm() {
+  document.getElementById('characterNameInput').value = '';
+  document.getElementById('imageUrlInput').value = '';
+  document.getElementById('collectionInput').value = '';
+  document.getElementById('statHP').value = '';
+  document.getElementById('statATK').value = '';
+
+  document.querySelectorAll('.spell-slot select').forEach(s => s.selectedIndex = 0);
+  document.querySelectorAll('.rarity-option').forEach(r => r.classList.remove('active'));
+
+  const iconContainer = document.querySelector('.preview-element-icons');
+  if (iconContainer) iconContainer.innerHTML = '';
+}
+
+
+
+
+
+
