@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'BoucherieFlared';
-  src: url('https://rawcdn.githack.com/Esjaee/Twst-Cards/fb953014fe37b308baf3fb2c274919460ed366a3/data/assets/fonts/BoucherieFlared.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -63,7 +56,7 @@ body {
 
 .title-area h1 {
     margin: 0;
-    font-family: 'BoucherieFlared', serif;
+    font-family: 'Ariel', sans-serif;
     font-size: 2rem;
     color: #282828;
     font-weight: 600;
@@ -136,18 +129,21 @@ body {
     transition: all 0.3s ease;
 }
 
-.category-label {
+/*element icons*/
+.element-icons {
     position: absolute;
-    bottom: 5px;
-    left: 5px;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 2px 6px;
-    font-size: 12px;
-    border-radius: 4px;
-    max-width: 80%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
+    top: 0px;
+    right: 3px;
+    display: flex;
+    gap: 0px;
+}
+
+.element-icon {
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /*functionalities*/
