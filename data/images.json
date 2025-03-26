@@ -1,17 +1,19 @@
 {
   "images": [
     {
-      "src": "https://lh3.googleusercontent.com/YKejPOeNu9GbIFimsK9S0ztj95TzJt4Ruo2z7GxoHOB_QGPrQD4mkeQZmSk3ApGW8T-UeE_9qvqHPYkGMNnbX_MKVn7r9lEofW6yDOxzSjzWPw=rw",
+      "src": "https://twistedwonderland.wiki.gg/images/e/ef/Icon_Riddle_SSR_Dorm_Uniform.png",
       "category": "✔",
-      "elements": ["Flora", "Water"]
+      "elements": ["Fire", "Fire"]
     },
     {
-      "src": "https://lh3.googleusercontent.com/FlI3ozJ2F10UEmpP_9DL_7UxW-cYrve_wJslfZIB6LchYQF5Xx4SgM9Dic20VDEXx7OileHKH6nxSAaWnUvQ1ol5_ZvJuaIY5RzyZ2tnVO4=rw",
-      "category": "✔"
+      "src": "https://twistedwonderland.wiki.gg/images/8/8f/Icon_Rook_SSR_Dorm_Uniform.png",
+      "category": "✔",
+      "elements": ["Flora", "Fire"]
     },
     {
-      "src": "https://lh3.googleusercontent.com/-3P-V3J8S8eJR8FVzTdOTOmhsdBVAZjaOllflcfw1IbYyllg0ICJPebmay1aNuIH2PB3UABTQ97qPYOtvimKH8RDPN56vaikmhRabPMmilG3EbbcN21bzONB0A=w120-rw",
-      "category": "✔"
+      "src": "https://twistedwonderland.wiki.gg/images/5/59/Icon_Epel_SSR_Dorm_Uniform.png",
+      "category": "✔",
+      "elements": ["Water", "Fire"]
     },
     {
       "src": "https://lh3.googleusercontent.com/nh1WphHCoo40cAubEDnyvVjqNrGaHsCDBGEwsyvVV55q7smilZ7dfs5ceU8gQX-D3CP8HLZEVG9PNzPnRD-AXygNvI3RjBYwd-D-kM7PIhB7=w120-rw",
