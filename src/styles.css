@@ -41,15 +41,22 @@ body {
 .container::before {
   content: "";
   position: absolute;
-  top: 25px;  /* offset to stay inside */
+  top: 25px;
   bottom: 25px;
-  left: 25px;
-  right: 25px;
-  border-left: 4px dotted #b4a073;
-  border-right: 4px dotted #b4a073;
+  left: 30px;
+  right: 30px;
   pointer-events: none;
   box-sizing: border-box;
+
+  background:
+    repeating-radial-gradient(circle, #b4a073 0 2px, transparent 2px 24px),
+    repeating-radial-gradient(circle, #b4a073 0 2px, transparent 2px 24px);
+  background-repeat: repeat-y;
+  background-position: left center, right center;
+  background-size: 4px 24px, 4px 24px;
 }
+
+
 
 .header-space {
     width: 95%;
@@ -156,4 +163,251 @@ body {
     background-position: center;
 }
 
-/*functionalities*/
+/*functionalities*//* Existing styles remain the same */
+
+/* Add Card Button */
+.add-card-button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #282828 50%, #0f0f0f 50%);
+  color: #f0efeb;
+  border: 2px solid #b4a073;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-card-button:hover {
+  color: #b4b4b4;
+  border: 2px solid #b4a073;
+}
+
+/* Add Card Modal */
+.add-card-modal-overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Existing modal styles, add these new styles */
+.add-card-modal-container {
+  width: 100%;
+  max-width: 500px; 
+  background: linear-gradient(to bottom, #282828 6.5%, #0f0f0f 6.5%);
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  margin: 0 auto;
+  position: relative; /* Important for absolute positioning of children */
+}
+
+.add-card-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.add-card-modal-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.add-card-modal-close {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(to bottom, #bfad87 50%, #b39e71 50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  line-height: 5px;
+  border: 1px solid black;
+  box-shadow: 
+    0 0 0 3px #bfad87; /* Outer border */
+}
+
+.add-card-modal-close:hover {
+  color: #b4b4b4;
+}
+
+.add-card-modal-content {
+  background-color: #f0efeb;
+  min-height: 400px;
+  padding: 40px;
+  padding-right: 45px;
+  padding-top: 30px;
+  position: relative;
+  
+  box-shadow:
+  inset 0 0 0 8px #f0efeb, 
+  inset 0 0 0 10px #b3a27e; 
+    
+}
+
+.add-card-modal-content::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+
+  border-image-source: repeating-linear-gradient(
+    to bottom,
+    #b4a073 0px,
+    #b4a073 3px,
+    transparent 3px,
+    transparent 20px
+  );
+  border-image-slice: 1;
+}
+
+
+/* MODAL STUFF*/
+.modal-fields-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #b4a073;
+}
+
+.card-preview-image {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  background: #b4a073;
+  border: 2px solid #7a6849;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  background-size: contain;     /* shows the full image without cropping */
+  background-repeat: no-repeat; /* prevents tiling */
+  background-position: center;  /* keeps image centered */
+}
+}
+
+.addcard-modal-fields label {
+  display: block;
+  margin-bottom: 2px;
+  color: #333;
+  font-size: 0.75rem; 
+}
+
+.addcard-modal-fields input {
+  width: 100%;
+  padding: 2px 0;
+  margin-bottom: 3px;
+  margin-top: 2px;
+  border: none;
+  border-bottom: 1px solid #b6a785;
+  background: transparent;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#characterNameInput {
+  font-size: 1.5rem; 
+  
+}
+
+#imageUrlInput {
+  margin-top: 16px;
+}
+
+/*SECOND BATCH OF ADD CARD MODAL STUFF KINGINA*/
+.modal-card-details-row {
+
+}
+
+.card-details-heading {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #7a6849;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+/*============================== SPELL BLOCK =========================================*/
+.spell-block {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.spell-block-header {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #7a6849;
+}
+
+.spell-slot-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.spell-slot {
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  border: 2px solid #b4a073;
+  border-radius: 6px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-element {
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.element-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(4px);
+  display: none;
+  width: 100px;
+  font-size: 0.85rem;
+}
+
+.spell-slot.open .element-dropdown {
+  display: block;
+}
+
+.add-spell-button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: #7a6849;
+  border: 2px dashed #b4a073;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/*============================END OF SPELL BLOCK =====================================*/
