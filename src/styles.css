@@ -1,11 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #393041;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    /* Add background image */
+    background-image: url('https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/backgrounds/alchemy-workshop-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background static while scrolling */
+    
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: darken;
 }
 
 .container {
@@ -20,8 +29,9 @@ body {
     padding-bottom: 40px;
     position: relative;
     
-    /* Existing box-shadow styles */
+
     box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.2),  /* External shadow for elevation */
     inset 0 0 0 8px #b4a073,
     inset 0 0 0 16px #f1f0ec, 
     inset 0 0 0 19px #b4a073; 
@@ -139,8 +149,8 @@ body {
 }
 
 .element-icon {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
