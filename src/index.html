@@ -14,18 +14,93 @@
     <div class="title-area">
       <h1>Cards</h1>
     </div>
-    <div class="filter-button-space">
-    <button class="filter-button">Filter</button>
+    <div class="button-space">
+      <button class="filter-button">Filter</button>
+      <button class="add-card-button">Add Card</button>
     </div>
   </div>
   
-<!--Card Grid-->
+  <!--Card Grid-->
   <div class="grid-space">
-        <div class="image-grid">
-      
-    </div>
+    <div class="img-grid"></div>
   </div>
 </div>
+
+<!-----------------------------------------------------------------------------> 
+<!-----------------------------------------------------------------------------> 
+<!-----------------------------------------------------------------------------> 
+
+<!-- Add Card Modal -->
+<div class="add-card-modal-overlay">
+  <div class="add-card-modal-container">
+    <div class="add-card-modal-header">
+      <h2 class="add-card-modal-title">Add New Card</h2>
+      <button class="add-card-modal-close">✖</button>
+    </div>
+    <div class="add-card-modal-content">
+      
+<!----------------------------------------------------------------------------->
+
+      <!-- CARD NAME URL AND IMAGE PREVIEW BLOCK-->
+      <div class="modal-fields-row">
+        <div class="card-preview-image" id="imagePreview"></div>
+          <div class="addcard-modal-fields">
+            <input type="text" id="characterNameInput" placeholder="✎"><br>
+            <label>
+              Character Name
+            </label>
+            <input type="text" id="imageUrlInput" placeholder="Paste image URL" oninput="previewImage()"><br>
+            <label>
+              Image URL
+            </label>
+          </div>
+      </div>
+      <!-- END OF CARD NAME URL AND IMAGE PREVIEW BLOCK-->
+      
+<!----------------------------------------------------------------------------->   
+
+    <div class="modal-card-details-row">
+      <div class="card-details-heading">Card Details</div>
+     
+      
+        <!-- SPELL BLOCK -->
+        <div class="spell-block">
+        <div class="spell-block-header">Spells:</div>
+        <div class="spell-slot-container" id="spellSlotContainer">
+          <div class="spell-slot" onclick="toggleElementDropdown(this)">
+            <span class="selected-element">?</span>
+            <select class="element-dropdown" onchange="updateSpellDisplay(this)">
+              <option disabled selected value="">Select Element</option>
+              <option value="Flora">Flora</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Cosmic">Cosmic</option>
+            </select>
+          </div>
+          <div class="spell-slot" onclick="toggleElementDropdown(this)">
+            <span class="selected-element">?</span>
+            <select class="element-dropdown" onchange="updateSpellDisplay(this)">
+              <option disabled selected value="">Select Element</option>
+              <option value="Flora">Flora</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Cosmic">Cosmic</option>
+            </select>
+          </div>
+          <button class="add-spell-button" onclick="addSpellSlot()">＋</button>
+        </div>
+      </div>
+      <!-- END OF SPELL BLOCK-->
+      
+      
+    </div>
+<!-----------------------------------------------------------------------------> 
+
+
+  </div>
+  </div>
+</div>
+
 
 <script src="./script.js" defer></script>
 </body>
