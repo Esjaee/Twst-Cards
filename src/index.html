@@ -65,34 +65,63 @@
       
         <!-- SPELL BLOCK -->
         <div class="spell-block">
-        <div class="spell-block-header">Spells:</div>
-        <div class="spell-slot-container" id="spellSlotContainer">
-          <div class="spell-slot" onclick="toggleElementDropdown(this)">
-            <span class="selected-element">?</span>
-            <select class="element-dropdown" onchange="updateSpellDisplay(this)">
-              <option disabled selected value="">Select Element</option>
-              <option value="Flora">Flora</option>
-              <option value="Fire">Fire</option>
-              <option value="Water">Water</option>
-              <option value="Cosmic">Cosmic</option>
-            </select>
+          <label class="spell-block-label">Spells</label>
+          <div class="spell-slots">
+            <div class="spell-slot" data-element="">
+              <div class="spell-element-select">
+                <span class="element-icon"></span>
+                <select>
+                  <option value="">Select</option>
+                  <option value="Flora">Flora</option>
+                  <option value="Fire">Fire</option>
+                  <option value="Water">Water</option>
+                  <option value="Cosmic">Cosmic</option>
+                </select>
+              </div>
+            </div>
+            <button class="add-spell-btn">+</button>
           </div>
-          <div class="spell-slot" onclick="toggleElementDropdown(this)">
-            <span class="selected-element">?</span>
-            <select class="element-dropdown" onchange="updateSpellDisplay(this)">
-              <option disabled selected value="">Select Element</option>
-              <option value="Flora">Flora</option>
-              <option value="Fire">Fire</option>
-              <option value="Water">Water</option>
-              <option value="Cosmic">Cosmic</option>
-            </select>
-          </div>
-          <button class="add-spell-button" onclick="addSpellSlot()">＋</button>
+        </div>
+      
+      
+      <!---- RARITY BLOCK ---->
+      <div class="rarity-block">
+        <label class="rarity-label">Rarity</label>
+        <div class="rarity-options">
+          <button type="button" class="rarity-option" data-rarity="SSR">SSR</button>
+          <button type="button" class="rarity-option" data-rarity="SR">SR</button>
+          <button type="button" class="rarity-option" data-rarity="R">R</button>
         </div>
       </div>
-      <!-- END OF SPELL BLOCK-->
+
       
+      <!-- COLLECTION BLOCK -->
+      <div class="collection-block">
+        <label class="collection-label" for="collectionInput">Collection</label>
+        <input type="text" id="collectionInput" placeholder="Enter collection name">
+      </div>
+
       
+      <!-- STATS BLOCK -->
+      <div class="stats-block">
+        <label class="stats-label">Stats</label>
+        <div class="stats-fields">
+          <div class="stat-field">
+            <label for="statHP">Max HP</label>
+            <input type="number" id="statHP" placeholder="e.g. 3000">
+          </div>
+          <div class="stat-field">
+            <label for="statATK">Max ATK</label>
+            <input type="number" id="statATK" placeholder="e.g. 900">
+          </div>
+        </div>
+      </div>
+      
+<!-- modal stuff-->
+      <div class="modal-actions">
+        <button class="save-card-button">Save Card</button>
+      </div>
+
     </div>
 <!-----------------------------------------------------------------------------> 
 
