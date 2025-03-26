@@ -1,6 +1,7 @@
-const GIST_ID = "c3faa4fb97af9853cf665fa02cc9b07d";
+const GIST_ID = "2bb78e5a29533659edb139aef9c27586";
 const GIST_FILENAME = "images.json";
 const GITHUB_TOKEN = "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";
+
 
 let images = [];
 
@@ -83,4 +84,63 @@ async function fetchFromGist() {
 }
 
 // Initial fetch when the page loads
-document.addEventListener('DOMContentLoaded', fetchFromGist);
+document.addEventListener('DOMContentLoaded', fetchFromGist);// Existing code remains the same
+
+// Modal Interaction
+document.addEventListener('DOMContentLoaded', () => {
+  const addCardButton = document.querySelector('.add-card-button');
+  const addCardModalOverlay = document.querySelector('.add-card-modal-overlay');
+  const addCardModalClose = document.querySelector('.add-card-modal-close');
+
+
+  addCardButton.addEventListener('click', () => {
+    addCardModalOverlay.style.display = 'flex';
+  });
+  
+    // Close modal when clicking the 'x' button
+  addCardModalClose.addEventListener('click', () => {
+    addCardModalOverlay.style.display = 'none';
+  });
+
+  // Close modal when clicking outside the modal
+  addCardModalOverlay.addEventListener('click', (event) => {
+    if (event.target === addCardModalOverlay) {
+      addCardModalOverlay.style.display = 'none';
+    }
+  });
+});
+
+
+/*** ADD CARD MODAL STUFDDFRE*/
+function previewImage() {
+  const url = document.getElementById('imageUrlInput').value.trim();
+  const preview = document.getElementById('imagePreview');
+  preview.style.backgroundImage = url ? `url("${url}")` : '';
+  
+  
+/*============================== SPELL BLOCK =========================================*/
+function toggleElementDropdown(slot) {
+  slot.classList.toggle("open");
+}
+
+function updateSpellDisplay(select) {
+  const slot = select.parentElement;
+  const selected = select.value;
+  slot.querySelector(".selected-element").textContent = selected[0]; // First letter as icon
+  slot.classList.remove("open");
+}
+
+function addSpellSlot() {
+  const container = document.getElementById("spellSlotContainer");
+  const existingSlots = container.querySelectorAll(".spell-slot");
+  if (existingSlots.length >= 3) return;
+
+  const newSlot = existingSlots[0].cloneNode(true);
+  newSlot.querySelector(".selected-element").textContent = "?";
+  newSlot.querySelector(".element-dropdown").selectedIndex = 0;
+  newSlot.classList.remove("open");
+  container.insertBefore(newSlot, container.querySelector(".add-spell-button"));
+}
+
+/*============================== END OF SPELL BLOCK ==================================*/
+}
