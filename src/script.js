@@ -13,29 +13,29 @@ function createImageElement(imageObj) {
   container.className = "image-container";
   container.setAttribute("draggable", true);
   container.dataset.src = src;
-  
-  /*UHH... THIS AUTOMATICALLY CREATES ELEMENT FOR EACH NEW IMAGE*/
+
   const img = document.createElement("img");
   img.src = src;
 
-  /*ELEMENT ICON SVG URLS*/
+  // Mapping for icon URLs
   const elementIconUrls = {
     'Flora': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/plant.svg',
     'Water': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/water.svg',
     'Fire': 'https://raw.githubusercontent.com/Esjaee/Twst-Cards/main/data/assets/icons/fire.svg'
   };
 
-  /*ELEMENT ICON CONTAINER ADDING*/
+  // Create element icons container
   const elementIconsContainer = document.createElement("div");
   elementIconsContainer.className = "element-icons";
 
-  /* ELEMENT ICON ADDING*/
+  // Add element icons
   elements.forEach(element => {
     console.log('Processing element:', element);
     
     const iconElement = document.createElement("div");
     iconElement.className = "element-icon";
     
+    // Use the raw GitHub URL for the specific element
     if (elementIconUrls[element]) {
       iconElement.style.backgroundImage = `url(${elementIconUrls[element]})`;
       console.log('Setting background image for:', element);
@@ -65,7 +65,7 @@ async function fetchFromGist() {
     const res = await fetch(`https://api.github.com/gists/${GIST_ID}`);
     const data = await res.json();
     
-    /* GIST LOGGING FOR ERRORS */
+    // Log the raw content to help debug
     console.log('Raw Gist Content:', data.files[GIST_FILENAME].content);
     
     const content = JSON.parse(data.files[GIST_FILENAME].content);
@@ -73,7 +73,7 @@ async function fetchFromGist() {
     images = (content.images || []).map(img => ({
       src: img.src,
       category: img.category || "No category",
-      elements: img.elements || [] 
+      elements: img.elements || [] // Ensure elements is always an array
     }));
 
     renderGrid();
@@ -82,5 +82,5 @@ async function fetchFromGist() {
   }
 }
 
-/* GIST FETCH */
+// Initial fetch when the page loads
 document.addEventListener('DOMContentLoaded', fetchFromGist);
