@@ -59,11 +59,12 @@ body {
 
 
 .header-space {
-    width: 95%;
+    width: 93.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .title-area {
@@ -77,14 +78,15 @@ body {
     font-size: 2rem;
     color: #282828;
     font-weight: 600;
+    box-sizing: border-box;
 }
 
 
-.filter-button-space {
-    width: 95%;
+.button-space {
     display: flex;
     justify-content: right;
     margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .filter-button {
@@ -95,6 +97,7 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .filter-button:hover {
@@ -104,11 +107,12 @@ body {
     border-radius: 6px;
 }
 
-/* Image Grid*/
+
+/*=================================== IMAGE GRID =====================================*/
+/*====================================================================================*/
 
 .grid-space {
     width: 90%;
-    /* Remove fixed height, allow content to determine size */
     background-color: #c8c7c7;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
@@ -124,7 +128,7 @@ body {
   overflow: hidden;
 }
 
-
+/*=================================== CARD =====================================*/
 .image-container {
     position: relative;
     width: 100%;
@@ -140,19 +144,90 @@ body {
 }
 
 .image-container img {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.3s ease;
+    height: auto%;
+    object-fit: contain;
 }
 
-/*element icons*/
+.image-container:hover img{
+  filter: brightness(0.7) blur(1px);
+  cursor: pointer;
+}
+
+.image-container:hover .element-icons{
+  display: none;
+}
+
+
+/*--- DELETE CARD ---*/
+.card-delete-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+  pointer-events: none; 
+}
+
+.image-container:hover .card-delete-button {
+  opacity: 1;
+  pointer-events: auto; /* now it's clickable */
+}
+
+.card-delete-button:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+/*--- EDIT CARD BUTTON ---*/
+.edit-card-button {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.image-container:hover .edit-card-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.edit-card-button:hover {
+  background-color: rgba(0, 153, 255, 0.8); /* light blue hover */
+}
+
+
+
+/*---ELEMENT ICON---*/
 .element-icons {
     position: absolute;
     top: 0px;
     right: 3px;
     display: flex;
     gap: 0px;
+    
 }
 
 .element-icon {
@@ -162,8 +237,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+/*=============================== END OF CARD =================================*/
 
-/*functionalities*//* Existing styles remain the same */
+
+/*functionalities*/
 
 /* Add Card Button */
 .add-card-button {
@@ -183,6 +260,7 @@ body {
 }
 
 /* Add Card Modal */
+
 .add-card-modal-overlay {
   display: none; /* Initially hidden */
   position: fixed;
@@ -251,6 +329,11 @@ body {
   padding-right: 45px;
   padding-top: 30px;
   position: relative;
+  box-sizing: border-box;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden; /* prevent sideways scroll */
+  width: 100%;
   
   box-shadow:
   inset 0 0 0 8px #f0efeb, 
@@ -303,6 +386,57 @@ body {
   background-color: #1a1a1a;
 }
 
+/*========================== MODAL FOR SMALLER SCREENS================================*/
+@media screen and (max-width: 480px) {
+  .add-card-modal-container {
+    max-width: 95%;
+    padding: 6px;
+  }
+
+  .add-card-modal-content {
+    padding: 20px;
+  }
+
+  .modal-fields-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-preview-image {
+    width: 100px;
+  }
+
+  .addcard-modal-fields input {
+    font-size: 0.9rem;
+  }
+
+  .add-card-modal-title {
+    font-size: 1rem;
+  }
+
+  .save-card-button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  
+  .stats-fields {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .collection-block,  .stat-field,
+  #collectionInput {
+    width: 100%;
+  }
+
+  .addcard-modal-fields input,   .stat-field input {
+    font-size: 0.85rem;
+  }
+
+}
+/*========================== MODAL FOR SMALLER SCREENS================================*/
+
 
 /* CARD DETAILSSS*/
 .modal-fields-row {
@@ -344,14 +478,14 @@ body {
 }
 
 
-.addcard-modal-fields label {
+.addcard-modal-fields label, .editcard-modal-fields label {
   display: block;
   margin-bottom: 2px;
   color: #333;
   font-size: 0.75rem; 
 }
 
-.addcard-modal-fields input {
+.addcard-modal-fields input, .editcard-modal-fields input {
   width: 100%;
   padding: 2px 0;
   margin-bottom: 3px;
@@ -387,6 +521,22 @@ body {
   margin-top: 8px;
 }
 
+/*============================ SPELL+RARITY BLOCK ====================================*/
+.spells-and-rarity-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px; /* adjust spacing between spells and rarity */
+  flex-wrap: wrap; /* wrap on small screens */
+}
+
+.spell-block {
+  flex-shrink: 0;
+}
+
+.rarity-block {
+  flex-shrink: 0;
+}
+
 /*============================== SPELL BLOCK =========================================*/
 .spell-block {
   margin-top: 16px;
@@ -399,13 +549,13 @@ body {
   font-size: 0.75rem; 
 }
 
-.spell-slots {
+.spell-slots, .editSpellSlots {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.spell-slot {
+.spell-slot{
   position: relative;
   width: 40px;
   height: 40px;
@@ -415,7 +565,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.spell-element-select {
+.spell-element-select, .editspell-element-select {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -443,7 +593,7 @@ body {
   cursor: pointer;
 }
 
-.add-spell-btn {
+.add-spell-btn, .edit-add-spell-btn {
   background: transparent;
   border: 2px dashed #b4a073;
   border-radius: 6px;
@@ -489,7 +639,6 @@ body {
 .spell-slot:nth-child(n+2):hover .spell-slot-delete {
   display: flex;
 }
-/*============================END OF SPELL BLOCK =====================================*/
 
 /*============================== RARITY BLOCK =========================================*/
 .rarity-block {
@@ -532,11 +681,12 @@ body {
   border-color: #b4a073;
   color: #000;
 }
-/*=========================== END OF RARITY BLOCK =====================================*/
 
 /*============================== COLLECTION BLOCK =====================================*/
 .collection-block {
   margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -549,17 +699,87 @@ body {
   margin-bottom: 6px;
 }
 
-#collectionInput {
+#collectionInput, #editCollectionInput {
   width: 100%;
   padding: 6px 10px;
   font-size: 0.9rem;
   border: 1px solid #b4a073;
   border-radius: 6px;
   outline: none;
-  background-color: #fdfdfb;
   color: #333;
 }
-/*=========================== END OF COLLECTION BLOCK =================================*/
+/*================================= BUDDY BLOCK ======================================*/
+.buddy-input-container {
+  margin-top: 6px;
+  padding-bottom: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: none
+  border-bottom: transparent;
+  position: relative;
+  min-height: 25px;
+  gap: 6px;
+}
+
+.buddy-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.buddy-tags .tag {
+  background: #b4a073;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.buddy-tags .tag .remove {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#buddyInput, #editBuddyInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  padding: 4px;
+  background: transparent;
+  min-width: 100px;
+  height: 10px; /* Constrain the input height */
+  line-height: 1.2;
+}
+
+.buddy-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #b4a073;
+  border-top: none;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.buddy-suggestions li {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.buddy-suggestions li:hover {
+  background: #f0efeb;
+}
 
 /*============================== STATS BLOCK =========================================*/
 .stats-block {
@@ -603,7 +823,139 @@ body {
   background-color: #fdfdfb;
   color: #333;
 }
-/*=========================== END OF STATS BLOCK =====================================*/
+/*=========================== EDIT CARD MODAL =====================================*/
+
+/* Edit Card Modal Overlay + Container (same structure as Add) */
+.edit-card-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-card-modal-container {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(to bottom, #282828 6.5%, #0f0f0f 6.5%);
+  padding: 8px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header */
+.edit-card-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 5px;
+}
+
+.edit-card-modal-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.edit-card-modal-close {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(to bottom, #bfad87 50%, #b39e71 50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  line-height: 5px;
+  border: 1px solid black;
+  box-shadow: 0 0 0 3px #bfad87;
+}
+
+.edit-card-modal-close:hover {
+  color: #b4b4b4;
+}
+
+/* Modal Content Wrapper */
+.edit-card-modal-content {
+  background-color: #f0efeb;
+  padding: 40px 45px 40px 40px;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  box-shadow:
+    inset 0 0 0 8px #f0efeb,
+    inset 0 0 0 10px #b3a27e;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.edit-card-modal-content::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-image-source: repeating-linear-gradient(
+    to bottom,
+    #b4a073 0px,
+    #b4a073 3px,
+    transparent 3px,
+    transparent 20px
+  );
+  border-image-slice: 1;
+}
+
+/* Update Card Button */
+.update-card-button {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #282828 50%, #0f0f0f 50%);
+  color: #f0efeb;
+  border: 2px solid #b4a073;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.update-card-button:hover {
+  color: #b4b4b4;
+  background-color: #1a1a1a;
+}
 
 
+/*============================== SAVING STATUS =======================================*/
+.status-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2e2e2e;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.status-popup.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
