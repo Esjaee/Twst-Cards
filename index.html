@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twst-Cards</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!--Foundation and Background-->
+<div class="container">
+  <div class="header-space">
+    <div class="title-area">
+      <h1>Cards</h1>
+    </div>
+    <div class="button-space">
+      <button id="filter-button" class="filter-button">Filter</button>
+      <button id="add-card-button" class="add-card-button">Add Card</button>
+    </div>
+  </div>
+  
+  <!--Card Grid-->
+  <div class="grid-space">
+    <div class="img-grid"></div>
+  </div>
+</div>
+
+<!-----------------------------------------------------------------------------> 
+<!-----------------------------------------------------------------------------> 
+<!-----------------------------------------------------------------------------> 
+
+<!-- Add Card Modal -->
+<div class="add-card-modal-overlay">
+  <div class="add-card-modal-container">
+    <div class="add-card-modal-header">
+      <h2 class="add-card-modal-title">Add New Card</h2>
+      <button class="add-card-modal-close">✖</button>
+    </div>
+    <div class="add-card-modal-content">
+
+
+      <!-- CARD NAME URL AND IMAGE PREVIEW BLOCK-->
+      <div class="modal-fields-row">
+        <div class="card-preview-image" id="imagePreview"></div>
+          <div class="addcard-modal-fields">
+            <input type="text" id="characterNameInput" placeholder="✎"><br>
+            <label>
+              Character Name
+            </label>
+            <input type="text" id="imageUrlInput" placeholder="Paste image URL" oninput="previewImage()"><br>
+            <label>
+              Image URL
+            </label>
+          </div>
+      </div>
+      
+      <!--CARD DETAILS BLOCK -->
+      <div class="modal-card-details-row">
+      <div class="card-details-heading">Card Details</div>
+      <div class="spells-and-rarity-row">
+        
+          <!-- SPELL BLOCK -->
+          <div class="spell-block">
+            <label class="spell-block-label">Spells</label>
+            <div class="spell-slots">
+              <div class="spell-slot" data-element="">
+                <div class="spell-element-select">
+                  <span class="element-icon"></span>
+                  <select>
+                    <option value="">Select</option>
+                    <option value="Flora">Flora</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Water">Water</option>
+                    <option value="Cosmic">Cosmic</option>
+                  </select>
+                </div>
+              </div>
+              <button class="add-spell-btn">+</button>
+            </div>
+          </div>
+        
+        
+        <!---- RARITY BLOCK ---->
+        <div class="rarity-block">
+          <label class="rarity-label">Rarity</label>
+          <div class="rarity-options">
+            <button type="button" class="rarity-option" data-rarity="SSR">SSR</button>
+            <button type="button" class="rarity-option" data-rarity="SR">SR</button>
+            <button type="button" class="rarity-option" data-rarity="R">R</button>
+          </div>
+        </div>
+      </div>
+      
+      
+        <!-- COLLECTION BLOCK -->
+        <div class="collection-block">
+          <label class="collection-label" for="collectionInput">Collection</label>
+          <input type="text" id="collectionInput" placeholder="Enter collection name">
+        </div>
+        
+        <!-- BUDDY BLOCK -->
+        <div class="buddy-block">
+          <label for="buddyInput">Buddy</label>
+          <div class="buddy-input-container">
+            <div id="buddy-tags" class="buddy-tags"></div>
+            <input type="text" id="buddyInput" placeholder="Type a buddy name..." />
+            <ul id="buddySuggestions" class="buddy-suggestions"></ul>
+          </div>
+        </div>
+      
+      
+      <!-- STATS BLOCK -->
+      <div class="stats-block">
+        <label class="stats-label">Stats</label>
+        <div class="stats-fields">
+          <div class="stat-field">
+            <label for="statHP">Max HP</label>
+            <input type="number" id="statHP" placeholder="e.g. 3000">
+          </div>
+          <div class="stat-field">
+            <label for="statATK">Max ATK</label>
+            <input type="number" id="statATK" placeholder="e.g. 900">
+          </div>
+        </div>
+      </div>
+      
+      <!-- modal stuff-->
+      <div class="modal-actions">
+        <button class="save-card-button">Save Card</button>
+      </div>
+
+    </div> <!--card details row end dive-->
+  </div> <!--Add card modal end div-->
+  </div> <!-- add card modal container end dive-->
+</div> <!-- add card modal overlay end div-->
+
+<!-----------------------------------------------------------------------------> 
+<!-----------------------------------------------------------------------------> 
+<!-----------------------------------------------------------------------------> 
+
+
+<!-- Edit Card Modal -->
+<div class="edit-card-modal-overlay">
+  <div class="edit-card-modal-container">
+    <div class="edit-card-modal-header">
+      <h2 class="edit-card-modal-title">Edit Card</h2>
+      <button class="edit-card-modal-close">✖</button>
+    </div>
+    <div class="edit-card-modal-content">
+      
+      <!-- CARD NAME URL AND IMAGE PREVIEW BLOCK -->
+      <div class="modal-fields-row">
+        <div class="card-preview-image" id="editImagePreview"></div>
+        <div class="editcard-modal-fields">
+          <input type="text" id="editCharacterNameInput" placeholder="✎"><br>
+          <label>Character Name</label>
+          <input type="text" id="editImageUrlInput" placeholder="Paste image URL" oninput="previewEditImage()" />
+          <label for="editImageUrlInput">Image URL</label>
+        </div>
+      </div>
+
+      <!-- CARD DETAILS ROW -->
+      <div class="modal-card-details-row">
+        <div class="card-details-heading">Card Details</div>
+
+        <div class="spells-and-rarity-row">
+          <!-- SPELL BLOCK -->
+          <div class="spell-block">
+            <label class="spell-block-label">Spells</label>
+            <div class="spell-slots" id="editSpellSlots">
+              <!-- JS will populate spell slots here -->
+              <button class="add-spell-btn">+</button>
+            </div>
+          </div>
+
+
+          <!-- RARITY BLOCK -->
+          <div class="rarity-block">
+            <label class="rarity-label">Rarity</label>
+            <div class="rarity-options" id="editRarityOptions">
+              <button type="button" class="rarity-option" data-rarity="SSR">SSR</button>
+              <button type="button" class="rarity-option" data-rarity="SR">SR</button>
+              <button type="button" class="rarity-option" data-rarity="R">R</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLLECTION BLOCK -->
+        <div class="collection-block">
+          <label class="collection-label" for="editCollectionInput">Collection</label>
+          <input type="text" id="editCollectionInput" placeholder="Enter collection name">
+        </div>
+
+        <!-- BUDDY BLOCK -->
+        <div class="buddy-block">
+          <label for="editBuddyInput">Buddy</label>
+          <div class="buddy-input-container">
+            <div id="edit-buddy-tags" class="buddy-tags"></div>
+            <input type="text" id="editBuddyInput" placeholder="Type a buddy name..." />
+            <ul id="editBuddySuggestions" class="buddy-suggestions"></ul>
+          </div>
+        </div>
+
+
+        <!-- STATS BLOCK -->
+        <div class="stats-block">
+          <label class="stats-label">Stats</label>
+          <div class="stats-fields">
+            <div class="stat-field">
+              <label for="editStatHP">Max HP</label>
+              <input type="number" id="editStatHP" placeholder="e.g. 3000">
+            </div>
+            <div class="stat-field">
+              <label for="editStatATK">Max ATK</label>
+              <input type="number" id="editStatATK" placeholder="e.g. 900">
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTION BUTTON -->
+        <div class="modal-actions">
+          <button class="update-card-button">Update Card</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Web stuff-->
+<div id="save-status" class="status-popup"></div>
+<script src="./script.js" defer></script>
+</body>
+</html>
