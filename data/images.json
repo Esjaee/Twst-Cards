@@ -1,89 +1,1214 @@
 {
   "images": [
     {
-      "src": "https://twistedwonderland.wiki.gg/images/e/ef/Icon_Riddle_SSR_Dorm_Uniform.png",
-      "category": "✔",
-      "elements": ["Fire", "Fire"]
-    },
-    {
       "src": "https://twistedwonderland.wiki.gg/images/8/8f/Icon_Rook_SSR_Dorm_Uniform.png",
-      "category": "✔",
-      "elements": ["Flora", "Fire"]
+      "category": "",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Rook",
+      "rarity": "SSR",
+      "collection": "Dorm Uniform",
+      "hp": 9750,
+      "atk": 7132,
+      "buddies": [
+        "Deuce",
+        "Epel",
+        "Lilia"
+      ],
+      "ownership": "owned"
     },
     {
+      "src": "https://twistedwonderland.wiki.gg/images/e/ef/Icon_Riddle_SSR_Dorm_Uniform.png",
+      "category": "",
+      "elements": [
+        "Fire",
+        "Fire"
+      ],
+      "name": "Riddle",
+      "rarity": "SSR",
+      "collection": "Dorm Uniform",
+      "hp": 8250,
+      "atk": 7979,
+      "buddies": [
+        "Cater",
+        "Trey",
+        "Azul"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "name": "Epel",
       "src": "https://twistedwonderland.wiki.gg/images/5/59/Icon_Epel_SSR_Dorm_Uniform.png",
-      "category": "✔",
-      "elements": ["Water", "Fire"]
+      "collection": "Dorm Uniform",
+      "hp": 15299,
+      "atk": 4591,
+      "rarity": "SSR",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "buddies": [
+        "Jack",
+        "Vil",
+        "Rook"
+      ],
+      "ownership": "owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/nh1WphHCoo40cAubEDnyvVjqNrGaHsCDBGEwsyvVV55q7smilZ7dfs5ceU8gQX-D3CP8HLZEVG9PNzPnRD-AXygNvI3RjBYwd-D-kM7PIhB7=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/0/05/Icon_Lilia_SSR_General%27s_Armor.png",
+      "category": "",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "name": "Lilia",
+      "rarity": "SSR",
+      "collection": "General's Armor",
+      "hp": 8418,
+      "atk": 7818,
+      "buddies": [
+        "Silver",
+        "Sebek",
+        "Jamil"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/YweTOGXl3O7v_doyykEVkOJgd68PGRrfdutsPirFVuE-uvRMD_k_v7dgTJdjkpt6CZ6oIjrp7OZhfqFmm5ymvXrF5CUJTjV2L4AfNfxw6Cnt=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/b/be/Icon_Ace_SSR_Suitor_Suit.png",
+      "category": "",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Ace",
+      "rarity": "SSR",
+      "collection": "Ghost Bride",
+      "hp": 8683,
+      "atk": 7574,
+      "buddies": [
+        "Riddle",
+        "Epel",
+        "Idia"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/ts1Y5H7205d0zIVad_Q8ywFpI0bVaDGW79EX4qSpkkq-vhXB2xitrFRwMGtE3Aql48bF6Fvw1FQIc46dGPCN4MM49wQ6QhRYq44szejJb-6V=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/4/48/Icon_Ace_SSR_Cozy_Loungewear.png?f8912a",
+      "category": "",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Ace",
+      "rarity": "SSR",
+      "collection": "Cozy Loungewear",
+      "hp": 11421,
+      "atk": 6316,
+      "buddies": [
+        "Cater",
+        "Kalim",
+        "Sebek"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/DcIDHogavZvSbbblb1Ju5HKjub1VGv7x_Mj6O_sFEbs8n8npwECbYQdn0U2Zz5aHuJNJpLG3emgPmIs2mH88wSKk_FGEc0UkjdQ4haSc7vpF=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/6/6b/Icon_Ace_SSR_Playful_Attire.png?b8454b",
+      "category": "",
+      "elements": [
+        "Flora",
+        "Flora"
+      ],
+      "name": "Ace",
+      "rarity": "SSR",
+      "collection": "Masquerade",
+      "hp": 11891,
+      "atk": 6072,
+      "buddies": [
+        "Azul",
+        "Vil",
+        "Silver"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/dBz79U1A0fXCU0k7O5XVuX_FVUkBBxET4C6UgiEkVbwGMmIaYc31S07goNLVcqIJLmgsrLR-Y9R3YXxsNZDygweKAK2xouJR4rPGD0jUBY0GkQ=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/4/47/Icon_Azul_SSR_Dorm_Uniform.png?3a8b19",
+      "category": "",
+      "elements": [
+        "Water",
+        "Water"
+      ],
+      "name": "Azul",
+      "rarity": "SSR",
+      "collection": "Dorm Uniform",
+      "hp": 11900,
+      "atk": 6030,
+      "buddies": [
+        "Riddle",
+        "Jade",
+        "Idia"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/iGIm7QAcBK9vhvdSc6FcsX1TBT9lHGw8e7ZEOkAatqD99E7oBZo_iQjYZViZL62kcmHccjPm-PJmVdv_ZmvFaMN3LBm-h-ygx4XzoDxhzdR3=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/b/b6/Icon_Ace_SSR_Basketball_Jersey.png?8214c3",
+      "category": "",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "name": "Ace",
+      "rarity": "SSR",
+      "collection": "Clubwear",
+      "hp": 8494,
+      "atk": 7750,
+      "buddies": [
+        "Jack",
+        "Floyd",
+        "Vil"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/oiPT5CAN57ahP-eUNLoZBLs8ayJ6-16tWYtLFHPyKAyyd-mueAum9H3XThuaUxHYpwlbyV7bE1eSjfzVYbSsdUYh0pzEa7OOlh_Yje5DQi4g=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/0/03/Icon_Leona_SSR_Dorm_Uniform.png?d18829",
+      "category": "",
+      "elements": [
+        "Flora",
+        "Flora"
+      ],
+      "name": "Leona",
+      "rarity": "SSR",
+      "collection": "Dorm Uniform",
+      "hp": 8565,
+      "atk": 7683,
+      "buddies": [
+        "Deuce",
+        "Ruggie",
+        "Vil"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/Le149HHQo-OdFuaPiq4KrPHRw8dTVq-hjOlC6H0tYcK7Iy536Wd_3i67UHVv5OVdF_-pRlWiLlDfXmQMTtAmjb1nl1sQsbKU2Yc9YCdfz9Nh=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/1/14/Icon_Silver_SSR_Halloween.png?2f8130",
+      "category": "",
+      "elements": [
+        "Fire",
+        "Fire"
+      ],
+      "name": "Silver",
+      "rarity": "SSR",
+      "collection": "Halloween",
+      "hp": 11228,
+      "atk": 6377,
+      "buddies": [
+        "Leona",
+        "Kalim",
+        "Sebek"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/9wzwEbKUs8KFKbJiDijDFpeEozal0WXJlLYOaIf_1WOXmbDrqRsztwiPZChbS1m3cJghPaNlmd2xE8PHq-rp3JiE4lIHCBYijYkzSuy9HDM=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/b/b5/Icon_Trey_SSR_Dorm_Uniform.png?109927",
+      "category": "",
+      "elements": [
+        "Water",
+        "Flora"
+      ],
+      "name": "Trey",
+      "rarity": "SSR",
+      "collection": "Dorm Uniform",
+      "hp": 15527,
+      "atk": 4528,
+      "buddies": [
+        "Deuce",
+        "Cater",
+        "Idia"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/7xhyJZirrzrpIthXR-4e9cWwJXYz47pm6K6oqlD7F_qRGz-4gX9PvTdTcnijADsglXAoTnlpsm2-U3XK2SnhgajOhN7TcAOsC5Ztr4463cO_Dg=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/8/83/Icon_Idia_SSR_Birthday_Bloom.png?6af6e9",
+      "category": "",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Idia",
+      "rarity": "SSR",
+      "collection": "Birthday Bloom",
+      "hp": 10503,
+      "atk": 6665,
+      "buddies": [
+        "Riddle",
+        "Trey",
+        "Rook"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/ui2qbvpjerD91EEcH2dA50VKVPzb0ITZ3H02axIwNEbFAu--7N_ayk8hD7EyWUfBG8bd91yd9s8etQUxVoPURCfdS5Qqale2PjNGql44Hscw_g=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/f/fc/Icon_Ortho_SSR_Ignihyde_Gear.png?a04e6c",
+      "category": "",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Ortho",
+      "rarity": "SSR",
+      "collection": "Dorm Uniform",
+      "hp": 10217,
+      "atk": 6815,
+      "buddies": [
+        "Idia",
+        "Leona",
+        "Deuce"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/uCStcJ-33HqCKYILEAP_K-zah4wxCsFRlU_3bzpgn8xYI9YcKVySJ2JbHslGtDb8BrscsoqWGEfZPMM4iO2oF5fSalMDHOy-UdyJpUhRkCXN=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/6/68/Icon_Jade_SSR_Halloween.png?d10103",
+      "category": "",
+      "elements": [
+        "Water",
+        "Flora"
+      ],
+      "name": "Jade",
+      "rarity": "SSR",
+      "collection": "Halloween",
+      "hp": 10244,
+      "atk": 6796,
+      "buddies": [
+        "Ruggie",
+        "Kalim",
+        "Azul"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/AjHH8D-LqBuE_RxfKJI28NgnzNquLv07gyeV6S-gETwzHxhnL-Yes5WX2ka6-9sohsUoh8g6Da48DtxrzDmtBIdYH4KMqK7vFHx3JmwUB63-=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/7/7b/Icon_Silver_SSR_Dawn_Armor.png?16890c",
+      "category": "",
+      "elements": [
+        "Cosmic",
+        "Cosmic"
+      ],
+      "name": "Silver",
+      "rarity": "SSR",
+      "collection": "Dawn Armor",
+      "hp": 8775,
+      "atk": 7532,
+      "buddies": [
+        "Malleus",
+        "Sebek",
+        "Lilia"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/wdKHCfikuE0LGO-F_rV8THy6jwjZ9eUalCc5KWcHgqDb0_LPlVwAhLBiS7iYPrnoutWeK1qyWiXJazRU1yd8T__qbD28j4bL89PX67ppzMM=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/6/6d/Icon_Floyd_SSR_Basketball_Jersey.png?e432f8",
+      "category": "",
+      "elements": [
+        "Water",
+        "Flora"
+      ],
+      "name": "Floyd",
+      "rarity": "SSR",
+      "collection": "Clubwear",
+      "hp": 15325,
+      "atk": 4612,
+      "buddies": [
+        "Jamil",
+        "Epel",
+        "Silver"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/1obhQ9p61ZjJAvQpMzyvfE73FbHTI2FRkfg_TEU85vnUFugC3yPCNLgvKsm4fPAw4Ogn0r5zdWFaOBWHWtGG2GbaXM8dmh-NDLREMIyUD5is=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/3/3d/Icon_Epel_SSR_Applepom.png?7b5be9",
+      "category": "",
+      "elements": [
+        "Water",
+        "Cosmic"
+      ],
+      "name": "Epel",
+      "rarity": "SSR",
+      "collection": "Applepom",
+      "hp": 9868,
+      "atk": 7054,
+      "buddies": [
+        "Leona",
+        "Kalim",
+        "Idia"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/qXuqdzbyLi16eBMsH4yYxscLqHpS13S0ePmkxoP_x1qze-oETKWeMPSXyJC25-b9v-bqjFtZH6xBFJ9ES3ZASOcVB1BJvCB8VVl9LGhKzAVk=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/5/57/Icon_Malleus_SSR_Club_Wear.png?550993",
+      "category": "",
+      "elements": [
+        "Water",
+        "Flora"
+      ],
+      "name": "Malleus",
+      "rarity": "SSR",
+      "collection": "Clubwear",
+      "hp": 11453,
+      "atk": 6298,
+      "buddies": [
+        "Cater",
+        "Trey",
+        "Jade"
+      ],
+      "ownership": "not-owned"
     },
     {
-      "src": "https://lh3.googleusercontent.com/2ZnvczotwUSPkxieoNChvLjpNaJLKlkHrpww3CYsn6WiAKKAx0A2BE9wl3_L6HEAVJrHntS5InkCh71NJRGNg-xvn1qCojv8CUwwUJZWZ-g_=w120-rw",
-      "category": "✘"
+      "src": "https://twistedwonderland.wiki.gg/images/c/cf/Icon_Malleus_SSR_Birthday_Bloom.png?63914b",
+      "category": "",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Malleus",
+      "rarity": "SSR",
+      "collection": "Birthday Bloom",
+      "hp": 9691,
+      "atk": 7171,
+      "buddies": [
+        "Ace",
+        "Leona",
+        "Ortho"
+      ],
+      "ownership": "not-owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/a/a9/Icon_Epel_SSR_Platinum_Jacket.png?c248a9",
+      "category": "",
+      "elements": [
+        "Water",
+        "Flora"
+      ],
+      "name": "Epel",
+      "rarity": "SSR",
+      "collection": "Platinum Jacket",
+      "hp": 15366,
+      "atk": 4600,
+      "buddies": [
+        "Riddle",
+        "Cater",
+        "Malleus"
+      ],
+      "ownership": "not-owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/f/ff/Icon_Lilia_SSR_Tropical_Wear.png?2d3d66",
+      "category": "",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Lilia",
+      "rarity": "SSR",
+      "collection": "Tropical Wear",
+      "hp": 13626,
+      "atk": 5333,
+      "buddies": [
+        "Ace",
+        "Kalim",
+        "Azul"
+      ],
+      "ownership": "not-owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/5/5c/Icon_Riddle_R_School_Uniform.png?118588",
+      "category": "School Uniform",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Riddle",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 7581,
+      "atk": 4410,
+      "buddies": [
+        "Trey"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/0/01/Icon_Riddle_R_PE_Uniform.png?ad80fc",
+      "category": "Gym Outfit",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "name": "Riddle",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 8823,
+      "atk": 3812,
+      "buddies": [
+        "Deuce"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/e/eb/Icon_Ace_R_School_Uniform.png?4b378e",
+      "category": "School Uniform",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Ace",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 7694,
+      "atk": 4347,
+      "buddies": [
+        "Deuce"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/7/7b/Icon_Ace_R_PE_Uniform.png?fc73d3",
+      "category": "Gym Outfit",
+      "elements": [
+        "Water",
+        "Flora"
+      ],
+      "name": "Ace",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 8957,
+      "atk": 3763,
+      "buddies": [
+        "Leona"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/f/fb/Icon_Ace_R_Luxe_Couture.png?75fdfd",
+      "category": "Luxe Couture",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Ace",
+      "rarity": "R",
+      "collection": "Luxe Couture",
+      "hp": 7240,
+      "atk": 4162,
+      "buddies": [
+        "Jamil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/e/e5/Icon_Cater_SR_Ceremonial_Robes.png?787e85",
+      "category": "Ceremonial Robes",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Cater",
+      "rarity": "SR",
+      "collection": "Ceremonial Robes",
+      "hp": 6713,
+      "atk": 6396,
+      "buddies": [
+        "Riddle",
+        "Jamil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/2/2b/Icon_Cater_R_PE_Uniform.png?fe416c",
+      "category": "Gym Outfit",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Cater",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 6751,
+      "atk": 4813,
+      "buddies": [
+        "Azul"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/f/fa/Icon_Cater_R_School_Uniform.png?e940fc",
+      "category": "School Uniform",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Cater",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 9087,
+      "atk": 3710,
+      "buddies": [
+        "Trey"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/d/db/Icon_Trey_R_School_Uniform.png?1abc84",
+      "category": "School Uniform",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Trey",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 7251,
+      "atk": 4478,
+      "buddies": [
+        "Cater"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/1/1b/Icon_Trey_R_PE_Uniform.png?ceca4d",
+      "category": "Gym Outfit",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Trey",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 9218,
+      "atk": 3658,
+      "buddies": [
+        "Jade"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/0/00/Icon_Deuce_R_School_Uniform.png?52de4a",
+      "category": "School Uniform",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Deuce",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 10367,
+      "atk": 3163,
+      "buddies": [
+        "Ace"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/c/c8/Icon_Ruggie_R_PE_Uniform.png?9505fa",
+      "category": "Gym Outfit",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Ruggie",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 6950,
+      "atk": 4678,
+      "buddies": [
+        "Trey"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/a/a7/Icon_Leona_R_School_Uniform.png?7eda46",
+      "category": "School Uniform",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Leona",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 6853,
+      "atk": 4743,
+      "buddies": [
+        "Riddle"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/a/a1/Icon_Leona_SR_Labwear.png?17c8ce",
+      "category": "Labwear",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Leona",
+      "rarity": "SR",
+      "collection": "Labwear",
+      "hp": 12822,
+      "atk": 3578,
+      "buddies": [
+        "Jack",
+        "Epel"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/6/61/Icon_Azul_SR_Labwear.png?8318ec",
+      "category": "Labwear",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Azul",
+      "rarity": "SR",
+      "collection": "Labwear",
+      "hp": 10592,
+      "atk": 4441,
+      "buddies": [
+        "Epel",
+        "Ortho"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/3/3a/Icon_Azul_SR_Luxe_Couture.png?9e42e7",
+      "category": "Luxe Couture",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Azul",
+      "rarity": "SR",
+      "collection": "Luxe Couture",
+      "hp": 7665,
+      "atk": 5338,
+      "buddies": [
+        "Kalim",
+        "Vil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/f/f4/Icon_Floyd_R_School_Uniform.png?707ac7",
+      "category": "School Uniform",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "name": "Floyd",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 5605,
+      "atk": 5488,
+      "buddies": [
+        "Azul"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/6/68/Icon_Floyd_R_PE_Uniform.png?35cab3",
+      "category": "Gym Outfit",
+      "elements": [
+        "Fire",
+        "Fire"
+      ],
+      "name": "Floyd",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 8148,
+      "atk": 4107,
+      "buddies": [
+        "Jade"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/5/5d/Icon_Kalim_R_School_Uniform.png?e2b73e",
+      "category": "School Uniform",
+      "elements": [
+        "Cosmic",
+        "Water"
+      ],
+      "name": "Kalim",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 9482,
+      "atk": 3552,
+      "buddies": [
+        "Jamil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/3/3c/Icon_Jamil_R_PE_Uniform.png?d8d20d",
+      "category": "Gym Outfit",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Jamil",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 10990,
+      "atk": 2993,
+      "buddies": [
+        "Floyd"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/e/e6/Icon_Jamil_SR_Labwear.png?a11d30",
+      "category": "Labwear",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Jamil",
+      "rarity": "SR",
+      "collection": "Labwear",
+      "hp": 10903,
+      "atk": 4317,
+      "buddies": [
+        "Azul",
+        "Kalim"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/0/07/Icon_Vil_R_School_Uniform.png?578699",
+      "category": "School Uniform",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Vil",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 8379,
+      "atk": 3990,
+      "buddies": [
+        "Epel"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "name": "Vil",
+      "src": "https://twistedwonderland.wiki.gg/images/b/bb/Icon_Vil_R_PE_Uniform.png?1a73f2",
+      "collection": "Gym Outfit",
+      "hp": 7149,
+      "atk": 4543,
+      "rarity": "R",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "buddies": [
+        "Rook"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/d/d0/Icon_Vil_SR_Ceremonial_Robes.png?3eec6d",
+      "category": "Ceremonial Robes",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Vil",
+      "rarity": "SR",
+      "collection": "Ceremonial Robes",
+      "hp": 6655,
+      "atk": 6449,
+      "buddies": [
+        "Jack",
+        "Rook"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/4/47/Icon_Epel_R_School_Uniform.png?efddeb",
+      "category": "School Uniform",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Epel",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 11148,
+      "atk": 2948,
+      "buddies": [
+        "Rook"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/e/eb/Icon_Epel_R_PE_Uniform.png?78df97",
+      "category": "Gym Outfit",
+      "elements": [
+        "Flora",
+        "Flora"
+      ],
+      "name": "Epel",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 7602,
+      "atk": 4397,
+      "buddies": [
+        "Ruggie"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/2/2a/Icon_Epel_SR_Labwear.png?4821a2",
+      "category": "Labwear",
+      "elements": [
+        "Water",
+        "Cosmic"
+      ],
+      "name": "Epel",
+      "rarity": "SR",
+      "collection": "Labwear",
+      "hp": 11214,
+      "atk": 4192,
+      "buddies": [
+        "Rook",
+        "Ortho"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/c/c4/Icon_Rook_R_School_Uniform.png?d50af0",
+      "category": "School Uniform",
+      "elements": [
+        "Water",
+        "Flora"
+      ],
+      "name": "Rook",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 5768,
+      "atk": 5336,
+      "buddies": [
+        "Vil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/e/e9/Icon_Rook_R_PE_Uniform.png?ce570e",
+      "category": "Gym Outfit",
+      "elements": [
+        "Cosmic",
+        "Fire"
+      ],
+      "name": "Rook",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 9435,
+      "atk": 3576,
+      "buddies": [
+        "Epel"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/1/1b/Icon_Rook_SR_Labwear.png?a4fa3b",
+      "category": "Labwear",
+      "elements": [
+        "Flora",
+        "Flora"
+      ],
+      "name": "Rook",
+      "rarity": "SR",
+      "collection": "Labwear",
+      "hp": 8330,
+      "atk": 5449,
+      "buddies": [
+        "Leona",
+        "Jamil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/7/74/Icon_Rook_SR_Ceremonial_Robes.png?56547c",
+      "category": "Ceremonial Robes",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Rook",
+      "rarity": "SR",
+      "collection": "Ceremonial Robes",
+      "hp": 11374,
+      "atk": 4134,
+      "buddies": [
+        "Floyd",
+        "Vil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/e/e4/Icon_Idia_R_School_Uniform.png?a99420",
+      "category": "School Uniform",
+      "elements": [
+        "Flora",
+        "Fire"
+      ],
+      "name": "Idia",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 5851,
+      "atk": 5257,
+      "buddies": [
+        "Ortho"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/b/bb/Icon_Idia_R_PE_Uniform.png?575e6c",
+      "category": "Gym Outfit",
+      "elements": [
+        "Fire",
+        "Water"
+      ],
+      "name": "Idia",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 10339,
+      "atk": 3175,
+      "buddies": [
+        "Ruggie"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/9/96/Icon_Idia_SR_Labwear.png?663d6a",
+      "category": "Labwear",
+      "elements": [
+        "Water",
+        "Water"
+      ],
+      "name": "Idia",
+      "rarity": "SR",
+      "collection": "Labwear",
+      "hp": 9498,
+      "atk": 4923,
+      "buddies": [
+        "Cater",
+        "Ortho"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/a/a3/Icon_Ortho_R_Archetype_Gear.png?af6506",
+      "category": "School Uniform",
+      "elements": [
+        "Water",
+        "Water"
+      ],
+      "name": "Ortho",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 9617,
+      "atk": 3674,
+      "buddies": [
+        "Idia"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/c/c2/Icon_Ortho_R_Athletic_Gear.png?ddf0a5",
+      "category": "Gym Outfit",
+      "elements": [
+        "Fire",
+        "Cosmic"
+      ],
+      "name": "Ortho",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 7879,
+      "atk": 4254,
+      "buddies": [
+        "Floyd"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/9/96/Icon_Ortho_SR_Burst_Gear.png?34d4dc",
+      "category": "Ceremonial Robes",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "name": "Ortho",
+      "rarity": "SR",
+      "collection": "Ceremonial Robes",
+      "hp": 9632,
+      "atk": 4850,
+      "buddies": [
+        "Epel",
+        "Idia"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/9/9c/Icon_Malleus_SR_Ceremonial_Robes.png?fb6ded",
+      "category": "Ceremonial Robes",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "name": "Malleus",
+      "rarity": "SR",
+      "collection": "Ceremonial Robes",
+      "hp": 8301,
+      "atk": 6014,
+      "buddies": [
+        "Leona",
+        "Sebek"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/5/59/Icon_Malleus_R_School_Uniform.png?e64b71",
+      "category": "School Uniform",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Malleus",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 10930,
+      "atk": 3008,
+      "buddies": [
+        "Ruggie"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/7/7e/Icon_Malleus_R_PE_Uniform.png?326a77",
+      "category": "Gym Outfit",
+      "elements": [
+        "Cosmic",
+        "Fire"
+      ],
+      "name": "Malleus",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 8905,
+      "atk": 3783,
+      "buddies": [
+        "Cater"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/0/0c/Icon_Silver_R_School_Uniform.png?631a08",
+      "category": "School Uniform",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Silver",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 5522,
+      "atk": 5562,
+      "buddies": [
+        "Sebek"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/2/23/Icon_Silver_R_PE_Uniform.png?323243",
+      "category": "Gym Outfit",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Silver",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 9565,
+      "atk": 3520,
+      "buddies": [
+        "Vil"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/7/73/Icon_Sebek_R_School_Uniform.png?2d8cc5",
+      "category": "School Uniform",
+      "elements": [
+        "Water",
+        "Fire"
+      ],
+      "name": "Sebek",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 9140,
+      "atk": 3690,
+      "buddies": [
+        "Ace"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/3/3d/Icon_Sebek_R_PE_Uniform.png?e81766",
+      "category": "Gym Outfit",
+      "elements": [
+        "Flora",
+        "Flora"
+      ],
+      "name": "Sebek",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 7761,
+      "atk": 4313,
+      "buddies": [
+        "Jack"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/a/a7/Icon_Lilia_R_School_Uniform.png?59f87c",
+      "category": "School Uniform",
+      "elements": [
+        "Fire",
+        "Flora"
+      ],
+      "name": "Lilia",
+      "rarity": "R",
+      "collection": "School Uniform",
+      "hp": 8080,
+      "atk": 4145,
+      "buddies": [
+        "Malleus"
+      ],
+      "ownership": "owned"
+    },
+    {
+      "src": "https://twistedwonderland.wiki.gg/images/4/4e/Icon_Lilia_R_PE_Uniform.png?9a7d22",
+      "category": "Gym Outfit",
+      "elements": [
+        "Flora",
+        "Water"
+      ],
+      "name": "Lilia",
+      "rarity": "R",
+      "collection": "Gym Outfit",
+      "hp": 5734,
+      "atk": 5363,
+      "buddies": [
+        "Rook"
+      ],
+      "ownership": "owned"
     }
-  ],
-  "filterVisible": false,
-  "selectedCategory": "all"
+  ]
 }
